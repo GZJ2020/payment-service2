@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="cn.sz.gz.dao.ICreditDAO" >
+
+	<select id="lookcredit" parameterType="java.lang.Integer" resultType="cn.sz.gz.pojo.Credit">
+		select pid,pscore,preason,ptime,suid from points where suid=#{suid}
+	</select>
+	
+	<insert id="addcredit" parameterType="cn.sz.gz.pojo.Credit">
+		insert into points (pscore,preason,ptime,suid) 
+		values (#{pscore},#{preason},#{ptime},#{suid})
+	</insert>
+	
+	
+</mapper>		
